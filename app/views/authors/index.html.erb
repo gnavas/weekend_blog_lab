@@ -1,9 +1,11 @@
 <div class="container-fluid">
 
 <h2 class = "text-center">Authors:</h2>
+<br>
 
 <!-- <table style = "border: 1px solid black; border-collapse: collapse"> -->
-
+<div class="row">
+<div class ="col-md-10 col-md-offset-1">
 <table class ="table table-striped">
 <tr>
 <th>First Name</th>
@@ -11,7 +13,7 @@
 <th>Age</th>
 <th>Info</th>
 <th>Edit</th>
-<th>Delete<th>
+<th>Delete</th>
 </tr>
 <% @authors.each do |author| %>
   <tr >
@@ -24,7 +26,12 @@
   </tr>
   <%end %>
 </table>
+</div>
+</div>
 
+<div class="row">
+<div class ="col-md-2 col-md-offset-1">
 <%=  link_to('Add new author', new_author_path, {class: "btn btn-success"}) %>
-
+</div>
+</div>
 </div>

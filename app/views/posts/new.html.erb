@@ -7,23 +7,34 @@
   </p>
   <% end %>
   <% end %>
+  <br>
+  <h2 class ="text-center">Add Blog Post Here:</h2>
+  <br>
 
-  <h2>Add Post Here:</h2>
-
-  <%= form_for([@author,@post], :html => { :class => "form-horizontal" }) do |f|%>
+<%= form_for([@author,@post], :html => { :class => "form-horizontal" }) do |f|%>
+<div class = row>
+<div class="col-md-3 col-md-offset-2">
   <%= f.label :title %>
   <%= f.text_field :title %><br />
-  
+</div>
+  <div class="col-md-3">
   <%= f.label :category %>
   <%= f.text_field :category %><br />
-
+  </div>
+ <div class="col-md-3">
   <%= f.label :body %>
   <%= f.text_field :body%><br />
-
+  </div>
+  </div>
   <br>
+  <div class ="row">
+  <div class = "col-md-3 col-md-offset-2">
+  <%=  link_to('Back to Author', root_path, {class: "btn btn-success"}) %>
+  </div>
+  <div class ="col-md-3">
   <%= f.submit "Add Post", class: 'btn btn-success' %>
-  <br><br>
-  <%=  link_to('Back to Posts', author_posts_path(@author), {class: "btn btn-success"}) %>
+  </div>
+  </div>
   <% end %>
 </div>
 
