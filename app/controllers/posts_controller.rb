@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @author = Author.find(params[:author_id])
-    @post = Post.new 
+    @post = Post.new post_params
     @post.author = @author 
     @author.posts << @post 
     if @post.save
@@ -43,12 +43,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to authors_post_path(@post.author)
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to author_posts_path(post.author)
   end
 
   private 
   def post_params
     params.require(:post).permit(:title, :body, :category, :author_id)
+  end
 end

@@ -1,2 +1,32 @@
-<h1>Authors#new</h1>
-<p>Find me in app/views/authors/new.html.erb</p>
+<div class="container-fluid">
+
+  <% if @author.errors.any?%>
+  <% @author.errors.full_messages.each do |error|%>
+  <p class = "text-danger">
+    <%= error %>
+  </p>
+  <% end %>
+  <% end %>
+
+  <h2>Add Author Here:</h2>
+
+  <%= form_for(@author, :html => { :class => "form-horizontal" }) do |f|%>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br />
+  
+  <%= f.label :last_name %>
+
+  <%= f.text_field :last_name %><br />
+
+  <%= f.label :age %>
+  <%= f.text_field :age%><br />
+
+  <br>
+  <%= f.submit "Add Author", class: 'btn btn-success' %>
+  <br><br>
+  <%=  link_to('Back to Authors', root_path, {class: "btn btn-success"}) %>
+  <% end %>
+</div>
+
+
+

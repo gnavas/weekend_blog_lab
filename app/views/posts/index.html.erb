@@ -1,2 +1,30 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container-fluid">
+
+<h2 class = "text-center"><%= @author.first_name%> <%= @author.last_name %> Posts</h2>
+
+<!-- <table style = "border: 1px solid black; border-collapse: collapse"> -->
+
+<table class ="table table-striped">
+<tr>
+<th>Title</th>
+<th>Category</th>
+<th>Info</th>
+<th>Edit</th>
+<th>Delete<th>
+</tr>
+<% @posts.each do |post| %>
+  <tr >
+    <td ><%=post.title  %></td>
+    <td><%= post.category %></td>
+    <td><%= link_to('Info', post_path(post), {class: "btn-xs btn-info"})%></td>
+    <td><%= link_to('Edit', edit_post_path(post), {class: "btn-xs btn-info"})%></td>
+    <td><%= link_to('Delete',post_path(post), method: :delete, data: { confirm: "Are you sure?" },class: "btn-xs btn-danger")%></td>
+  </tr>
+  <%end %>
+</table>
+
+<%=  link_to('Add new Post', new_author_post_path, {class: "btn btn-success"}) %>
+<br><br>
+<%=  link_to('Back to All Authors', root_path, {class: "btn btn-success"}) %>
+
+</div>
