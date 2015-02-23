@@ -3,7 +3,8 @@
 <h2 class = "text-center">Authors:</h2>
 
 <!-- <table style = "border: 1px solid black; border-collapse: collapse"> -->
-
+<div class="row">
+<div class ="col-md-10 col-md-offset-1">
 <table class ="table table-striped">
 <tr>
 <th>First Name</th>
@@ -16,9 +17,13 @@
     <td><%= @author.age %></td>
   </tr>
 </table>
-
+</div>
+</div>
+<div class="row">
+<div class ="col-md-2 col-md-offset-1">
 <%=  link_to('See Blog Posts', author_posts_path(@author), {class: "btn btn-success"}) %>
 <br><br>
 <%=  link_to('Back to Authors', root_path, {class: "btn btn-success"}) %>
-
+</div>
+</div>
 </div>

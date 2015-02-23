@@ -8,22 +8,31 @@
   <% end %>
   <% end %>
 
-  <h2>Add Author Here:</h2>
-
-  <%= form_for(@author, :html => { :class => "form-horizontal" }) do |f|%>
+  <h2 class="text-center">Add Author Here:</h2>
+ <%= form_for(@author, :html => { :class => "form-horizontal" }) do |f|%>
+<div class = row>
+<div class="col-md-3 col-md-offset-2">
   <%= f.label :first_name %>
   <%= f.text_field :first_name %><br />
-  
+  </div>
+    <div class="col-md-3">
   <%= f.label :last_name %>
-
   <%= f.text_field :last_name %><br />
-
+  </div>
+    <div class="col-md-3">
   <%= f.label :age %>
   <%= f.text_field :age%><br />
+  </div>
+  </div>
 
   <br>
+  <div class ="row">
+  <div class = "col-md-3 col-md-offset-2">
+    <%=  link_to('Back to Authors', root_path, {class: "btn btn-success"}) %>
+  </div>
+   <div class ="col-md-3">
   <%= f.submit "Edit Author", class: 'btn btn-success' %>
-  <br><br>
-  <%=  link_to('Back to Authors', root_path, {class: "btn btn-success"}) %>
   <% end %>
+  </div>
+  </div>
 </div>

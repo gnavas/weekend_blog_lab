@@ -4,13 +4,15 @@
 
 <!-- <table style = "border: 1px solid black; border-collapse: collapse"> -->
 
+<div class="row">
+<div class ="col-md-10 col-md-offset-1">
 <table class ="table table-striped">
 <tr>
 <th>Title</th>
 <th>Category</th>
 <th>Info</th>
 <th>Edit</th>
-<th>Delete<th>
+<th>Delete</th>
 </tr>
 <% @posts.each do |post| %>
   <tr >
@@ -22,9 +24,13 @@
   </tr>
   <%end %>
 </table>
-
+</div>
+</div>
+<div class="row">
+<div class ="col-md-2 col-md-offset-1">
 <%=  link_to('Add new Post', new_author_post_path, {class: "btn btn-success"}) %>
 <br><br>
 <%=  link_to('Back to All Authors', root_path, {class: "btn btn-success"}) %>
-
+</div>
+</div>
 </div>

@@ -1,29 +1,21 @@
 <div class="container-fluid">
 
-  <% if @post.errors.any?%>
-  <% @post.errors.full_messages.each do |error|%>
-  <p class = "text-danger">
-    <%= error %>
-  </p>
-  <% end %>
-  <% end %>
-  <br>
   <h2 class ="text-center">Add Blog Post Here:</h2>
   <br>
 
-<%= form_for([@author,@post], :html => { :class => "form-horizontal" }) do |f|%>
+<%= simple_form_for([@author,@post], :html => { :class => "form-horizontal" }) do |f|%>
 <div class = row>
-<div class="col-md-3 col-md-offset-2">
-  <%= f.label :title %>
-  <%= f.text_field :title %><br />
+<div class="col-md-4">
+  <%= f.input :title %>
+<br>
 </div>
-  <div class="col-md-3">
-  <%= f.label :category %>
-  <%= f.text_field :category %><br />
+  <div class="col-md-4">
+  <%= f.input :category %>
+<br>
   </div>
- <div class="col-md-3">
-  <%= f.label :body %>
-  <%= f.text_field :body%><br />
+ <div class="col-md-4">
+  <%= f.input :body %>
+<br>
   </div>
   </div>
   <br>

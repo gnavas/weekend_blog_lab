@@ -3,7 +3,8 @@
 <h2 class = "text-center"><%= @post.title%></h2>
 
 <!-- <table style = "border: 1px solid black; border-collapse: collapse"> -->
-
+<div class="row">
+<div class ="col-md-10 col-md-offset-1">
 <table class ="table table-striped">
 <tr>
 <th>Title</th>
@@ -18,7 +19,13 @@
     <td><%= link_to('Delete',post_path(@post), method: :delete, data: { confirm: "Are you sure?" },class: "btn-xs btn-danger")%></td>
   </tr>
 </table>
+</div>
+</div>
+<div class="row">
+<div class ="col-md-10 col-md-offset-1">
 <p class = "text-center"><%=@post.body%></p>
 <br>
 <%=  link_to('Back to Author', author_posts_path(@author), {class: "btn btn-success"}) %>
+</div>
+</div>
 </div>
