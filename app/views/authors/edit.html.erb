@@ -13,15 +13,15 @@
  <%= simple_form_for(@author, :html => { :class => "form-inline" }) do |f|%>
 <div class = row>
 <div class="col-md-2 col-md-offset-2">
-  <%= f.input :first_name %>
+  <%= f.input :first_name, error_html: { id: 'error'} %>
   </div>
   <div class = "col-md-1"></div>
     <div class="col-md-2">
-  <%= f.input :last_name %>
+  <%= f.input :last_name, error_html: { id: 'error'} %>
   </div>
   <div class = "col-md-1"></div>
     <div class="col-md-2">
-  <%= f.input :age %>
+  <%= f.input :age, error_html: { id: 'error'} %>
   </div>
   </div>
 

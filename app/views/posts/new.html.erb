@@ -7,17 +7,17 @@
 <%= simple_form_for([@author,@post], :html => { :class => "form-inline"}) do |f|%>
 <div class = row>
 <div class="col-md-2 col-md-offset-2">
-  <%= f.input :title %>
+  <%= f.input :title, error_html: { id: 'error'}%>
 <br>
 </div>
 <div class = "col-md-1"></div>
   <div class="col-md-2">
-  <%= f.input :category %>
+  <%= f.input :category, error_html: { id: 'error'} %>
 <br>
   </div>
   <div class = "col-md-1"></div>
  <div class=" col-md-2">
-  <%= f.input :body %>
+  <%= f.input :body, error_html: { id: 'error'} %>
 <br>
   </div>
   </div>

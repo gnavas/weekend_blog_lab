@@ -1,29 +1,18 @@
 <%= render "shared/navbar" %>
 <div class="container-fluid">
 
-  <% if @author.errors.any?%>
-  <% @author.errors.full_messages.each do |error|%>
-  <p class = "text-danger">
-    <%= error %>
-  </p>
-  <% end %>
-  <% end %>
-  <br>
-  <h2 class ="text-center">Add Author Here:</h2>
-  <br>
-
-<%= simple_form_for(@author, :html => { :class => "form-inline"}) do |f|%>
+<%= simple_form_for(@author, :html => { :class => "form-inline autofocus"}) do |f|%>
 <div class = row>
 <div class="col-md-2 col-md-offset-2">
-  <%= f.input :first_name %>
+  <%= f.input :first_name, error_html: { id: 'error'}%>
 </div>
 <div class = "col-md-1"></div>
   <div class="col-md-2">
-  <%= f.input :last_name %>
+  <%= f.input :last_name, error_html: { id: 'error'} %>
   </div>
   <div class = "col-md-1"></div>
  <div class="col-md-2">
-  <%= f.input :age %>
+  <%= f.input :age, error_html: { id: 'error'} %>
   </div>
   </div>
   <br>
