@@ -1,3 +1,4 @@
+<%= render "shared/navbar" %>
 <div class="container-fluid">
 
 <h2 class = "text-center"><%= @author.first_name%> <%= @author.last_name %> Posts</h2>
@@ -28,9 +29,7 @@
 </div>
 <div class="row">
 <div class ="col-md-2 col-md-offset-1">
-<%=  link_to('Add new Post', new_author_post_path, {class: "btn btn-success"}) %>
-<br><br>
-<%=  link_to('Back to All Authors', root_path, {class: "btn btn-success"}) %>
-</div>
+<%=  link_to('Add new Post', new_author_post_path, {class: "btn btn-primary"}) %>
+
 </div>
 </div>

@@ -1,28 +1,32 @@
+<%= render "shared/navbar" %>
 <div class="container-fluid">
 
-  <% if @post.errors.any?%>
-  <% @post.errors.full_messages.each do |post|%>
-  <p class = "text-danger">
-    <%= error %>
-  </p>
-  <% end %>
-  <% end %>
 
-  <h2>Edit Post Here:</h2>
-
-  <%= form_for(@post, :html => { :class => "form-horizontal" }) do |f|%>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br />
-  
-  <%= f.label :category %>
-  <%= f.text_field :category %><br />
-
-  <%= f.label :body %>
-  <%= f.text_field :body%><br />
+  <h2 class="text-center">Edit Post Here:</h2>
+ <%= simple_form_for(@post, :html => { :class => "form-horizontal" }) do |f|%>
+<div class="row">
+<div class = "col-md-2 col-md-offset-2">
+  <%= f.input :title %>
+ </div>
+ <div class ="col-md-1"> </div>
+ <div class = "col-md-2 ">
+ <%= f.input :category %>
+ </div>
+ <div class ="col-md-1"> </div>
+ <div class = "col-md-2 ">
+  <%= f.input :body %>
+  </div>
+  </div>
 
   <br>
-  <%= f.submit "Edit Post", class: 'btn btn-success' %>
+    <div class ="row">
+  <div class = "col-md-2 col-md-offset-2">
+  <%=  link_to('Back to Posts',author_posts_path(@author) , {class: "btn btn-primary"}) %>
   <br><br>
-  <%=  link_to('Back to Posts',author_posts_path(@author) , {class: "btn btn-success"}) %>
+    </div>
+  <div class ="col-md-3 col-md-offset-1">
+  <%= f.submit "Edit Post", class: 'btn btn-primary' %>
   <% end %>
+  </div>
+  </div>
 </div>

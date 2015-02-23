@@ -1,3 +1,4 @@
+<%= render "shared/navbar" %>
 <div class="container-fluid">
 
 <h2 class = "text-center"><%= @post.title%></h2>
@@ -25,7 +26,7 @@
 <div class ="col-md-10 col-md-offset-1">
 <p class = "text-center"><%=@post.body%></p>
 <br>
-<%=  link_to('Back to Author', author_posts_path(@author), {class: "btn btn-success"}) %>
+<%=  link_to('Back to Author', author_posts_path(@author), {class: "btn btn-primary"}) %>
 </div>
 </div>
 </div>

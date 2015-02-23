@@ -1,30 +1,33 @@
+<%= render "shared/navbar" %>
 <div class="container-fluid">
 
   <h2 class ="text-center">Add Blog Post Here:</h2>
   <br>
 
-<%= simple_form_for([@author,@post], :html => { :class => "form-horizontal" }) do |f|%>
+<%= simple_form_for([@author,@post], :html => { :class => "form-horizontal"}) do |f|%>
 <div class = row>
-<div class="col-md-4">
+<div class="col-md-2 col-md-offset-2">
   <%= f.input :title %>
 <br>
 </div>
-  <div class="col-md-4">
+<div class = "col-md-1"></div>
+  <div class="col-md-2">
   <%= f.input :category %>
 <br>
   </div>
- <div class="col-md-4">
+  <div class = "col-md-1"></div>
+ <div class=" col-md-2">
   <%= f.input :body %>
 <br>
   </div>
   </div>
   <br>
   <div class ="row">
-  <div class = "col-md-3 col-md-offset-2">
-  <%=  link_to('Back to Author', root_path, {class: "btn btn-success"}) %>
+  <div class = "col-md-2 col-md-offset-2">
+  <%=  link_to('Back to Author', author_posts_path(@author), {class: "btn btn-primary"}) %>
   </div>
-  <div class ="col-md-3">
-  <%= f.submit "Add Post", class: 'btn btn-success' %>
+  <div class ="col-md-3 col-md-offset-1">
+  <%= f.submit "Add Post", class: 'btn btn-primary' %>
   </div>
   </div>
   <% end %>
